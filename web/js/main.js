@@ -1,5 +1,20 @@
 angular
-  .module('DockerPanel', ['ngResource', 'evening'])
+  .module('DockerPanel', ['ngRoute', 'ngResource', 'evening'])
+  .config(['$routeProvider',
+    function($routeProvider) {
+      $routeProvider.
+        when('/users', {
+          templateUrl: 'templates/users.html',
+          controller: 'UserController'
+        }).
+        when('/users/:id', {
+          templateUrl: 'templates/user-view.html',
+          controller: 'UserDetailsController'
+        }).
+        otherwise({
+          redirectTo: '/users'
+        });
+    }])
   .factory('User', function UserFactory(EveModel, EveCollection) {
     function User(data) {
       EveModel.call(this, data);

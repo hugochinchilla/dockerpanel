@@ -1,0 +1,230 @@
+<div id="wrapper">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="static/img/logo.png" alt="Docker Panel"/></a>
+  </div>
+
+  <ul class="nav navbar-right top-nav">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <span class="badge">4</span> <b class="caret"></b></a>
+      <ul class="dropdown-menu alert-dropdown">
+        <li>
+          <a href="#">Alerta 1 <span class="label label-default">Importante</span></a>
+        </li>
+        <li>
+          <a href="#">Alerta 2 <span class="label label-primary">Nueva</span></a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="#">View All</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <li class="hidden-xs lateral-user">
+          <a href="#">
+              <div class="user">
+                  <div class="logo text-center">
+                      <img class="img-circle" src="http://placehold.it/120x120" alt="">
+                  </div>
+                  <div class="user-body col-xs-12 text-center">
+                      <h5 class="media-heading">
+                        <strong>John Smith</strong>
+                      </h5>
+                  </div>
+              </div>
+          </a>
+        </li>
+        <li class="active">
+          <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+        </li>
+        <li>
+          <a href="users.html"><i class="fa fa-fw fa-user"></i> Users</a>
+        </li>
+        <li>
+          <a href="webs.html"><i class="fa fa-fw fa-globe"></i> Webs</a>
+        </li>
+        <li>
+          <a href="databases.html"><i class="fa fa-fw fa-database"></i> Databases</a>
+        </li>
+        <li>
+          <a href="alerts.html"><i class="fa fa-fw fa-support"></i> Alerts</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+
+  <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+
+
+
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Dashboard <small>Statistics Overview</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li class="active">
+              <i class="fa fa-dashboard"></i> Dashboard
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+
+
+
+
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-primary panel-hover">
+            <a href="users.html">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-user fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">26</div>
+                    <div>Users</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="users.html">
+              <div class="panel-footer">
+                <span class="pull-left">View Details</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-green panel-hover">
+            <a href="webs.html">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-globe fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">12</div>
+                    <div>Webs</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="webs.html">
+              <div class="panel-footer">
+                <span class="pull-left">View Details</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-yellow panel-hover">
+            <a href="databases.html">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-database fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">124</div>
+                    <div>Databases</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="databases.html">
+              <div class="panel-footer">
+                <span class="pull-left">View Details</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-red panel-hover">
+            <a href="alerts.html">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-support fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge">13</div>
+                    <div>Alerts</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="alerts.html">
+              <div class="panel-footer">
+                <span class="pull-left">View Details</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->

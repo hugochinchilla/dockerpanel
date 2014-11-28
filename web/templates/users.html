@@ -1,0 +1,211 @@
+<div id="wrapper" ng-controller="UserController">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="static/img/logo.png" alt="Docker Panel"/></a>
+  </div>
+
+  <ul class="nav navbar-right top-nav">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <span class="badge">4</span> <b class="caret"></b></a>
+      <ul class="dropdown-menu alert-dropdown">
+        <li>
+          <a href="#">Alerta 1 <span class="label label-default">Importante</span></a>
+        </li>
+        <li>
+          <a href="#">Alerta 2 <span class="label label-primary">Nueva</span></a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="#">View All</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <li class="hidden-xs lateral-user">
+          <a href="#">
+              <div class="user">
+                  <div class="logo text-center">
+                      <img class="img-circle" src="http://placehold.it/120x120" alt="">
+                  </div>
+                  <div class="user-body col-xs-12 text-center">
+                      <h5 class="media-heading">
+                        <strong>John Smith</strong>
+                      </h5>
+                  </div>
+              </div>
+          </a>
+        </li>
+        <li>
+          <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+        </li>
+        <li class="active">
+          <a href="users.html"><i class="fa fa-fw fa-user"></i> Users</a>
+        </li>
+        <li>
+          <a href="webs.html"><i class="fa fa-fw fa-globe"></i> Webs</a>
+        </li>
+        <li>
+          <a href="databases.html"><i class="fa fa-fw fa-database"></i> Databases</a>
+        </li>
+        <li>
+          <a href="alerts.html"><i class="fa fa-fw fa-support"></i> Alerts</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+
+  <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Users <small>Users Overview</small>
+          </h1>
+        </div>
+      </div>
+      <!-- /.row -->
+
+
+      <div class="row">
+
+        <!-- new web -->
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-fw fa-plus-circle"></i> Create New User</h3>
+            </div>
+            <div class="panel-body">
+              <form role="form" ng-submit="addUser(firstname, lastname)">
+                <div class="form-group">
+                  <label class="control-label" for="name">Username</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="name">First Name</label>
+                  <input type="text" class="form-control" id="name" ng-model="firstname">
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="name">Last Name</label>
+                  <input type="text" class="form-control" id="name" ng-model="lastname">
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="name">Password</label>
+                  <input type="password" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="name">Password</label>
+                  <input type="password" class="form-control" id="name">
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label" for="image">Type</label>
+                  <select id="image" class="form-control">
+                    <option>Administrator</option>
+                    <option>Contributor</option>
+                    <option>User</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Profile Photo</label>
+                  <input type="file">
+                </div>
+
+                <div class="form-group text-right">
+                  <button type="sumbit" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- /new web -->
+
+        <!-- web list -->
+        <div class="col-xs-12 col-sm-12 col-md-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-fw fa-user"></i> Created Users</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>First Name</th>
+                            <th>Permissions</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in data.users">
+                            <td>-</td>
+                            <td>{{ user.firstname }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td><span class="label label-success">Administrator</span</td>
+                            <td>
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
+                                  Edit <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">Action</a></li>
+                                  <li><a href="#">Another action</a></li>
+                                  <li><a href="#">Something else here</a></li>
+                                  <li class="divider"></li>
+                                  <li><a href="#">Separated link</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+        <!-- /web list -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
