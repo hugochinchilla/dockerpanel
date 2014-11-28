@@ -1,0 +1,3 @@
+var DomainController = function($scope) {
+
+};
