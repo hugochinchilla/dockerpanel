@@ -1,10 +1,12 @@
 var UserController = function($scope, User) {
   $scope.data = {}
 
-  $scope.addUser = function(firstname, lastname) {
+  $scope.addUser = function(firstname, lastname, username, password) {
     var user = new User();
     user.firstname = firstname;
     user.lastname = lastname;
+    user.username = username;
+    user.password = password;
     user.save().then($scope.refresh);
   }
 
