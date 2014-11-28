@@ -16,9 +16,9 @@
   ],
   "dependencies": {
     "semantic": "~1.0.1",
-    "angular": "~1.3.4",
     "jquery": "~2.1.1",
-    "angular-resource": "~1.3.4",
+    "angular": "1.3.4",
+    "angular-resource": "1.3.4",
     "eve-api": "https://github.com/sourcefabric-innovation/eve-api.git",
     "lodash": "~2.4.1",
   }
