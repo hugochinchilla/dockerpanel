@@ -15,7 +15,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body ng-app="DockerPanel" ng-init>
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -141,7 +141,7 @@
         </div>
         <!-- /.row -->
 
-        <div class="row">
+        <div class="row" ng-controller="UserController" ng-cloack>
 
 
 
@@ -152,40 +152,22 @@
                 <h3 class="panel-title"><i class="fa fa-fw fa-plus-circle"></i> Create New User</h3>
               </div>
               <div class="panel-body">
-                <form role="form">
+                <form role="form" ng-submit="addUser(firstname, lastname, username, password)">
                   <div class="form-group">
-                    <label class="control-label" for="name">Username</label>
-                    <input type="text" class="form-control" id="name">
+                    <label class="control-label" for="firstname">Firstname</label>
+                    <input type="text" class="form-control" id="firstname" ng-model="firstname">
                   </div>
                   <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
-                    <input type="text" class="form-control" id="name">
+                    <label class="control-label" for="lastname">Lastname</label>
+                    <input type="text" class="form-control" id="lastname" ng-model="lastname">
                   </div>
                   <div class="form-group">
-                    <label class="control-label" for="name">First Name</label>
-                    <input type="text" class="form-control" id="name">
+                    <label class="control-label" for="username">Username</label>
+                    <input type="text" class="form-control" id="username" ng-model="username">
                   </div>
                   <div class="form-group">
-                    <label class="control-label" for="name">Password</label>
-                    <input type="password" class="form-control" id="name">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label" for="name">Password</label>
-                    <input type="password" class="form-control" id="name">
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label" for="image">Type</label>
-                    <select id="image" class="form-control">
-                      <option>Administrator</option>
-                      <option>Contributor</option>
-                      <option>User</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Profile Photo</label>
-                    <input type="file">
+                    <label class="control-label" for="password">Password</label>
+                    <input type="password" class="form-control" id="password" ng-model="password">
                   </div>
 
                   <div class="form-group text-right">
@@ -216,10 +198,11 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <tr>
-                              <td>ninorene</td>
-                              <td>Nino</td>
-                              <td>Álvarez</td>
+
+                          <tr  ng-repeat="user in data.users"r>
+                              <td>{{ user.username }}</td>
+                              <td>{{ user.firstname }}</td>
+                              <td>{{ user.lastname }}</td>
                               <td><span class="label label-success">Administrator</span</td>
                               <td>
                                 <div class="btn-group">
@@ -236,66 +219,7 @@
                                 </div>
                               </td>
                           </tr>
-                          <tr>
-                              <td>ninorene</td>
-                              <td>Nino</td>
-                              <td>Álvarez</td>
-                              <td><span class="label label-success">Administrator</span</td>
-                              <td>
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
-                                    Edit <span class="caret"></span>
-                                  </button>
-                                  <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                  </ul>
-                                </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>ninorene</td>
-                              <td>Nino</td>
-                              <td>Álvarez</td>
-                              <td><span class="label label-success">Administrator</span</td>
-                              <td>
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
-                                    Edit <span class="caret"></span>
-                                  </button>
-                                  <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                  </ul>
-                                </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>ninorene</td>
-                              <td>Nino</td>
-                              <td>Álvarez</td>
-                              <td><span class="label label-success">Administrator</span</td>
-                              <td>
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
-                                    Edit <span class="caret"></span>
-                                  </button>
-                                  <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                  </ul>
-                                </div>
-                              </td>
-                          </tr>
+
 
                       </tbody>
                   </table>
@@ -322,10 +246,19 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
   <script>(typeof angular != 'undefined') || document.write('<script src="vendor/angular/angular.min.js"><\/script>')</script>
 
+  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-resource.js"></script>
+  <script src="vendor/angular-thickm/dist/angular-thickm.js"></script>
+  <script src="vendor/angular-evening/dist/angular-evening.js"></script>
+
+  <script src="vendor/lodash/dist/lodash.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/app/user/UserController.js"></script>
+  <script src="js/app/domain/DomainController.js"></script>
   <script src="js/main.js"></script>
 
-  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

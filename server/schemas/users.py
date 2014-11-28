@@ -13,7 +13,12 @@ schema = {
         'type': 'string',
         'minlength': 1,
         'maxlength': 50,
-    }
+    },
+    'username': {
+        'type': 'string',
+        'minlength': 1,
+        'maxlength': 50,
+    },
 }
 
 users = {
