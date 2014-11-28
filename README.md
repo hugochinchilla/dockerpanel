@@ -33,3 +33,7 @@ cd server
 pip install -r requirements.txt
 ```
 
+
+## Contributors
+
+ * Nino René Álvarez (@ninorene)
