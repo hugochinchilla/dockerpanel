@@ -1,16 +1,15 @@
 angular
-  .module('DockerPanel', ['ngResource', 'eveApi'])
+  .module('DockerPanel', ['ngResource', 'evening'])
+  .factory('User', function UserFactory(EveModel, EveCollection) {
+    function User(data) {
+      EveModel.call(this, data);
+    }
 
-  .constant('config', {
-    server: { url: 'http://127.0.0.1:5000' }
+    EveModel.extend(User);
+    User.prototype._modelName = 'users'; // for URLs
+    User.prototype._baseUrl = 'http://127.0.0.1:5000/';  // for URLs, can also be set in API layer
+
+    return User;
   })
-  .config(["apiProvider", function(apiProvider) {
-    apiProvider.api('users', { type:'http', backend: { rel:'users' }});
-  }])
-  /*
-  .factory("User", function(api) {
-    //console.log(api);
-  })
-*/
-  .controller('UserController', ['$scope', 'api', UserController])
+  .controller('UserController', ['$scope', 'User', UserController])
   .controller('DomainController', ['$scope', DomainController]);

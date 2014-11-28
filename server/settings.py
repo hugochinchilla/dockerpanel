@@ -16,6 +16,7 @@ RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 
 X_DOMAINS = '*'
+X_HEADERS = ['Content-Type']
 
 # Let's just use the local mongod instance. Edit as needed.
 # Please note that MONGO_HOST and MONGO_PORT could very well be left
