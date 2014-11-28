@@ -1,2 +1,4 @@
 web/vendor/
+web/node_modules/
+*sublime-*
 *.pyc

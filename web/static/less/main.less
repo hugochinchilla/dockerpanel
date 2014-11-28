@@ -1,0 +1,29 @@
+// Include bootstrap
+@import "../../vendor/bootstrap/less/bootstrap";
+
+// Local utilities
+@import "variables";
+@import "mixins";
+@import "template/sb-admin";
+// Fonts
+@import (less) '../../vendor/font-awesome/less/font-awesome.less';
+@fa-font-path:  "../../../vendor/font-awesome/fonts";
+
+
+.navbar{
+  .navbar-brand{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    img{
+      height: 100%;
+    }
+  }
+  .lateral-user{
+    .user{
+      overflow: hidden;
+    }
+    .user-body {
+      margin-top: 10px;
+    }
+  }
+}
