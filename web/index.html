@@ -9,30 +9,33 @@
 
       <link rel="stylesheet" href="vendor/semantic/dist/semantic.css">
   </head>
-  <body>
+  <body ng-app="DockerPanel" ng-init>
     <!--[if lt IE 9]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <nav class="ui fixed menu inverted navbar">
-      <a href="" class="brand item">Project Name</a>
-      <a href="" class="active item">Home</a>
-      <a href="" class="item">Features</a>
-      <a href="" class="item">Contact</a>
-    </nav> <!-- end nav -->
-
-
-    <script src="vendor/semantic/dist/semantic.js"></script>
+    <div ng-controller="UserController">
+      {{ hello }}
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="vendor/jquery/dist/jquery.min.js"><\/script>')</script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.js"></script>
     <script>(typeof angular != 'undefined') || document.write('<script src="vendor/angular/angular.min.js"><\/script>')</script>
 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-resource.js"></script>
+    <script src="vendor/eve-api/dist/eve-api.js"></script>
+    <script src="vendor/angular-evening/dist/angular-evening.js"></script>
+
+    <script src="vendor/semantic/dist/semantic.js"></script>
+    <script src="vendor/lodash/dist/lodash.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/app/user/UserController.js"></script>
+    <script src="js/app/domain/DomainController.js"></script>
     <script src="js/main.js"></script>
 
+    <!--
     <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
         function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -41,5 +44,6 @@
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+    -->
   </body>
 </html>
